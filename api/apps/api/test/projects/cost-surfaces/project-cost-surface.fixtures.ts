@@ -376,7 +376,14 @@ export const getProjectCostSurfaceFixtures = async () => {
         );
       }
     },
-
+    ThenCostSurfaceUploadEventsShouldReflectThatProjectCostSurfaceUploadWasSuccessful:
+      async (projectId: string) => {
+        const finishedEvent = await apiEventService.getLatestEventForTopic({
+          topic: projectId,
+          kind: API_EVENT_KINDS.project__costSurface_shapefile_finished__v1alpha1,
+        });
+        expect(finishedEvent).toBeDefined();
+      },
     ThenCostSurfaceAPIEntityWasProperlyUpdated: async (
       response: request.Response,
       name: string,

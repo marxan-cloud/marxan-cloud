@@ -174,7 +174,9 @@ describe('Cost Surface', () => {
 
       // ASSERT
       await fixtures.ThenCostSurfaceAPIEntityWasProperlySaved(costSurfaceName);
-      await fixtures.ThenCostSurfaceUploadEventsShouldReflectThatProjectCostSurfaceUploadWasSuccessful(costSurfaceName);
+      await fixtures.ThenCostSurfaceUploadEventsShouldReflectThatProjectCostSurfaceUploadWasSuccessful(
+        projectId,
+      );
     });
 
     it(`should return error when the cost surface name is empty`, async () => {
@@ -212,7 +214,9 @@ describe('Cost Surface', () => {
 
       // ASSERT
       await fixtures.ThenCostSurfaceAPIEntityWasProperlySaved(costSurfaceName);
-      await fixtures.ThenCostSurfaceUploadEventsShouldReflectThatProjectCostSurfaceUploadWasSuccessful(costSurfaceName);
+      await fixtures.ThenCostSurfaceUploadEventsShouldReflectThatProjectCostSurfaceUploadWasSuccessful(
+        projectId,
+      );
     });
 
     it(`should return error when the cost surface could not be found`, async () => {
